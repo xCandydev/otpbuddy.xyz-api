@@ -104,7 +104,7 @@
 
 
 ###### Response
-```javascript
+```
 {
   status:200,
   data : {
@@ -154,6 +154,7 @@
 | CODE | type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `200` | `success` |  Action was success |
+| `210` | `success` |  waiting for message |
 | `201` | `error` | Invaild ID |
 | `202` | `error` | Insufficient Balance |
 | `203` | `error` | Product Not Found |
