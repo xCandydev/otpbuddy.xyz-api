@@ -8,7 +8,7 @@
 
 ```
   GET https://otpbuddy.xyz/v1/api/getBalance?token=<token>
-``
+```
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
@@ -28,7 +28,7 @@
 #### Buy Phone Number
 
 ```
-  GET https://test.otpbuddy.xyz/v1/api/getNumber?token=<token>&server=in&product_id=<product_id>
+  GET https://otpbuddy.xyz/v1/api/getNumber?token=<token>&server=in&product_id=<product_id>
 ```
 
 | Parameter | Type     | Description                |
@@ -42,16 +42,16 @@
 {
   "status": 200,
   "data": {
-    "number": "916300185808",
-    "id": "63dca665627bfd2bf8ceebff"
+    "number": "9163001XXXXX",
+    "id": "63dca665627XXXXXX"
      }
 }
 ``` 
 
-#### Get OTP of Number
+#### Get SMS 
 
-```http
-  GET /v1/api/getSms?token=<token>&id=<number_id>
+```
+  GET https://otpbuddy.xyz/v1/api/getSms?token=<token>&id=<id>
 ```
 
 | Parameter | Type     | Description                |
@@ -62,18 +62,16 @@
 ###### Response
 ```javascript
 {
-  status:200,
-  data : {
-    balance : 500
-  }
+    "status": 200,
+    "message": "Your Code is ######"
 }
 ``` 
 
 
-#### Set Status
+#### Cancel Number 
 
-```http
-  GET /v1/api/setStatus?token=<token>&id=<number_id>&status=<status_code>
+```
+  GET https://otpbuddy.xyz/v1/api/cancelNumber?token=<token>&id=<id>
 ```
 
 | Parameter | Type     | Description                |
@@ -85,40 +83,15 @@
 ###### Response
 ```javascript
 {
-  status:200,
-  data : {
-    balance : 500
-  }
+    "status": 200,
+    "message": "Cancelled"
 }
 ``` 
-
-#### Get Status
-
-```http
-  GET /v1/api/getStatus?token=<token>&id=<number_id>
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `token` | `string` | **Required**. Your API key |
-| `id` | `string` | **Required**. ID of Number |
-
-
-###### Response
-```
-{
-  status:200,
-  data : {
-    balance : 500
-  }
-}
-``` 
-
 
 #### Get Products
 
-```http
-  GET /v1/api/getStatus?token=<token>
+```
+  GET https://otpbuddy.xyz/v1/api/getProducts?token=<token>
 ```
 
 | Parameter | Type     | Description                |
@@ -128,16 +101,19 @@
 
 
 ###### Response
-```json
+```javascrit
 {
-  status:200,
-  data : {
-   whatsapp :{
-     id:...,
-     price:..,
-   },
-   .....
-  }
+    "status": 200,
+    "data": [
+    {
+      "product_name": "Вконтакте",
+      "price": 9,
+      "product_id": "vk"
+    },
+    {..},
+    {..},
+    {..}
+    ]
 }
 ``` 
 
