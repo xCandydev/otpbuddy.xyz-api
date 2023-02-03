@@ -6,9 +6,9 @@
 
 #### Get Available Balance
 
-```http
-  GET /v1/api/getBalance?token=<token>
 ```
+  GET https://otpbuddy.xyz/v1/api/getBalance?token=<token>
+``
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
@@ -17,18 +17,18 @@
 ###### Response
 ```javascript
 {
-  status:200,
-  data : {
-    balance : 500
-  }
+  "status": 200,
+  "data": {
+        "balance": 42
+    }
 }
 ```
 
 
-#### Get New Number
+#### Buy Phone Number
 
-```http
-  GET /v1/api/getNumber?token=<token>&sever=in&product_id=<product_id>
+```
+  GET https://test.otpbuddy.xyz/v1/api/getNumber?token=<token>&server=in&product_id=<product_id>
 ```
 
 | Parameter | Type     | Description                |
@@ -40,10 +40,11 @@
 ###### Response
 ```javascript
 {
-  status:200,
-  data : {
-    balance : 500
-  }
+  "status": 200,
+  "data": {
+    "number": "916300185808",
+    "id": "63dca665627bfd2bf8ceebff"
+     }
 }
 ``` 
 
